@@ -1,16 +1,14 @@
 <template>
-  <q-page class="q-pa-md sena-page">
+  <q-page
+    class="q-pa-md sena-page"
+    :style="{ backgroundImage: `url(${imagenFachada})` }"
+  >
+    <div class="page-overlay"></div>
 
-    <!-- Banner / fachada -->
-    <q-img
-      :src="imagenFachada"
-      class="rounded-borders shadow-3 banner"
-      fit="cover"
-    >
-      <div class="absolute-bottom banner-title">
-        <div class="text-h4 text-weight-bold">{{ nombre }}</div>
-      </div>
-    </q-img>
+    <div class="service-heading">
+      <div class="heading-kicker">SERVICIO DEL CENTRO</div>
+      <div class="text-h3 text-weight-bold">{{ nombre }}</div>
+    </div>
 
     <!-- Descripción -->
     <q-card flat bordered class="q-mt-md">
@@ -92,14 +90,51 @@ defineProps({
 
 <style scoped>
 .sena-page {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  position: relative;
+  min-height: calc(100vh - 70px);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.page-overlay {
+  position: fixed;
+  inset: 70px 0 0;
+  z-index: 0;
+  background: rgba(245, 249, 245, .56);
+  pointer-events: none;
+}
+.service-heading,
+.sena-page > .q-card,
+.sena-page > .row {
+  width: 100%;
   max-width: 1000px;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  z-index: 1;
 }
-.banner {
-  height: 260px;
+.service-heading {
+  padding: 18px 24px 22px;
+  margin-bottom: 16px;
+  color: #4b2a16;
+  background: rgba(238, 151, 68, .96);
+  border-radius: 4px 28px 4px 28px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, .14);
 }
-.banner-title {
-  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.65) 100%);
-  color: #fff;
+.heading-kicker {
+  margin-bottom: 5px;
+  color: #7e481e;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+}
+.sena-page > .q-card {
+  background: rgba(255, 255, 255, .94);
+}
+.sena-page > .row .q-card {
+  background: rgba(255, 255, 255, .94);
 }
 </style>

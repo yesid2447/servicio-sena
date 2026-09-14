@@ -1,12 +1,11 @@
 <template>
   <q-layout view="hHh lpR fFf">
-
-    <q-header elevated class="bg-white text-green-7">
-      <q-toolbar>
+    <q-header elevated class="bg-green-8 text-white site-header">
+      <q-toolbar class="site-toolbar">
         <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
 
         <q-toolbar-title>
-          <q-avatar>
+          <q-avatar class="header-logo bg-white">
             <img alt="Quasar logo" src="./assets/img/Logosimbolo-SENA-PRINCIPAL.png">
           </q-avatar>
           Centro Agroturístico SENA
@@ -14,7 +13,15 @@
       </q-toolbar>
     </q-header>
 
-    <q-drawer v-model="leftDrawerOpen" side="left" overlay behavior="mobile" bordered>
+    <q-drawer
+      v-model="leftDrawerOpen"
+      side="left"
+      overlay
+      behavior="mobile"
+      bordered
+      class="services-drawer"
+      content-class="services-drawer-content"
+    >
       <div class="text-h5 q-pa-md">Servicios</div>
 
       <q-list>
@@ -58,3 +65,21 @@ const servicios = [
   { label: 'Coordinación', to: '/coordinacion', icon: 'groups' },
 ]
 </script>
+
+<style scoped>
+.site-toolbar {
+  min-height: 70px;
+}
+
+.header-logo {
+  padding: 4px;
+}
+
+.services-drawer {
+  background: #f6bd78;
+}
+
+:deep(.services-drawer-content) {
+  background: #f6bd78;
+}
+</style>

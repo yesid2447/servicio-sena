@@ -10,7 +10,6 @@
       <div class="text-h3 text-weight-bold">{{ nombre }}</div>
     </div>
 
-    <!-- Descripción -->
     <q-card flat bordered class="q-mt-md">
       <q-card-section>
         <div class="text-subtitle1 text-green-9 text-weight-medium q-mb-xs">
@@ -24,7 +23,6 @@
 
     <div class="row q-col-gutter-md q-mt-none">
 
-      <!-- Horarios y teléfono -->
       <div class="col-12 col-md-6">
         <q-card flat bordered>
           <q-card-section>
@@ -52,7 +50,6 @@
         </q-card>
       </div>
 
-      <!-- Encargado -->
       <div class="col-12 col-md-6">
         <q-card flat bordered class="full-height">
           <q-card-section class="text-center">
@@ -80,10 +77,8 @@ defineProps({
   nombre: { type: String, required: true },
   imagenFachada: { type: String, required: true },
   descripcion: { type: String, required: true },
-  // Array de objetos { dia: 'Lunes', horario: '7:00 am - 4:00 pm' }
   horarios: { type: Array, required: true },
   telefono: { type: String, required: true },
-  // Objeto { foto, nombre, cargo, correo }
   encargado: { type: Object, required: true }
 })
 </script>

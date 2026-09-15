@@ -63,6 +63,7 @@ const servicios = [
   { label: 'Biblioteca', to: '/biblioteca', icon: 'menu_book' },
   { label: 'Cafetería', to: '/cafeteria', icon: 'restaurant' },
   { label: 'Coordinación', to: '/coordinacion', icon: 'groups' },
+  { label: 'Acerca', to: '/acerca', icon: 'info' }
 ]
 </script>
 

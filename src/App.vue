@@ -92,7 +92,7 @@ const servicios = [
 }
 
 .site-toolbar {
-  min-height: 88px;
+  min-height: 108px;
   padding: 0 18px;
 }
 
@@ -101,6 +101,8 @@ const servicios = [
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(247, 199, 106, 0.22);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+  width: 52px;
+  height: 52px;
 }
 
 .brand-block {
@@ -115,8 +117,8 @@ const servicios = [
 }
 
 .header-logo {
-  width: 62px;
-  height: 62px;
+  width: 70px;
+  height: 70px;
   padding: 0;
   background: linear-gradient(135deg, #ffffff 0%, #edf7f0 100%);
   border: 3px solid #f4b04d;
@@ -143,14 +145,14 @@ const servicios = [
 }
 
 .brand-title {
-  font-size: 1.08rem;
+  font-size: 1.28rem;
   font-weight: 800;
   letter-spacing: 0.04em;
   color: #f8f5f0;
 }
 
 .brand-subtitle {
-  font-size: 0.68rem;
+  font-size: 0.78rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: #d2efd8;

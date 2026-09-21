@@ -134,7 +134,7 @@ defineProps({
 }
 
 .heading-kicker {
-  font-size: 0.7rem;
+  font-size: 1.15rem;
   letter-spacing: 0.22em;
   font-weight: 800;
   color: rgba(31, 39, 34, 0.8);
@@ -143,7 +143,7 @@ defineProps({
 
 .service-title {
   margin: 0;
-  font-size: clamp(2.2rem, 4vw, 3.9rem);
+  font-size: clamp(3.8rem, 6vw, 7rem);
   font-weight: 900;
   line-height: 1.04;
   letter-spacing: -0.04em;
@@ -153,11 +153,12 @@ defineProps({
 .info-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  grid-auto-rows: minmax(220px, 1fr);
+  grid-template-rows: minmax(260px, 1.2fr) minmax(220px, 1fr);
   gap: 22px;
   align-items: stretch;
   flex: 1;
   width: 100%;
+  min-height: 620px;
 }
 
 .info-card {
@@ -168,11 +169,20 @@ defineProps({
   box-shadow: 0 18px 36px rgba(37, 58, 49, 0.10);
   overflow: hidden;
   color: #183c31;
-  min-height: 220px;
+  height: 100%;
+  display: flex;
+}
+
+.info-card :deep(.q-card__section) {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .description-card {
-  grid-column: 1 / 3;
+  grid-column: 1 / -1;
   background: linear-gradient(135deg, rgba(233, 249, 239, 0.95), rgba(245, 238, 223, 0.92));
 }
 
@@ -185,7 +195,7 @@ defineProps({
 .card-label {
   display: flex;
   align-items: center;
-  font-size: 1.12rem;
+  font-size: 2rem;
   font-weight: 800;
   color: #1d5d48;
   margin-bottom: 14px;
@@ -199,7 +209,7 @@ defineProps({
   margin: 0;
   color: #26473d;
   line-height: 1.8;
-  font-size: 1.02rem;
+  font-size: 1.9rem;
 }
 
 .schedule-list {
@@ -216,7 +226,7 @@ defineProps({
 .schedule-day,
 .schedule-time {
   color: #244b41;
-  font-size: 0.96rem;
+  font-size: 1.5rem;
 }
 
 .schedule-time {
@@ -225,7 +235,7 @@ defineProps({
 }
 
 .contact-text {
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   font-weight: 800;
   color: #163d32;
 }
@@ -270,13 +280,13 @@ defineProps({
 }
 
 .profile-name {
-  font-size: 1.18rem;
+  font-size: 1.8rem;
   font-weight: 800;
   color: #123d34;
 }
 
 .profile-role {
-  font-size: 0.94rem;
+  font-size: 1.4rem;
   font-weight: 700;
   color: #476d63;
 }
@@ -286,13 +296,14 @@ defineProps({
   align-items: center;
   justify-content: center;
   color: #1f7a5d;
-  font-size: 0.92rem;
+  font-size: 1.3rem;
 }
 
 @media (max-width: 768px) {
   .info-grid {
     grid-template-columns: 1fr;
-    grid-auto-rows: auto;
+    grid-template-rows: auto;
+    min-height: auto;
   }
 
   .description-card {

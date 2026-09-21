@@ -4,36 +4,43 @@
 
     <div class="content-wrapper">
       <div class="glass-panel">
-        <div class="section-title text-green-9 text-weight-bold">Equipo desarrollador</div>
+        <div class="section-header">
+          <div class="section-badge">Institucional</div>
+          <h2 class="section-title">Equipo desarrollador</h2>
+        </div>
 
-        <q-card flat bordered class="q-mb-lg developer-card">
-          <q-card-section class="developer-content row items-center justify-center no-wrap">
-            <div class="developer-text col-12 col-md">
-              <div class="developer-name text-h6 text-weight-bold">{{ desarrollador.nombre }}</div>
-              <div class="developer-phone text-body2 q-mt-sm">
+        <q-card flat class="developer-card">
+          <q-card-section class="developer-content">
+            <div class="developer-avatar-wrap">
+              <q-avatar size="112px" class="developer-avatar">
+                <img :src="desarrollador.foto" :alt="desarrollador.nombre">
+              </q-avatar>
+            </div>
+
+            <div class="developer-text">
+              <div class="developer-name">{{ desarrollador.nombre }}</div>
+              <div class="developer-phone">
                 <q-icon name="phone" size="16px" class="q-mr-sm" />
                 {{ desarrollador.contacto }}
               </div>
             </div>
-
-            <div class="developer-avatar-wrap col-12 col-md-auto text-center">
-              <q-avatar size="110px" class="developer-avatar">
-                <img :src="desarrollador.foto" :alt="desarrollador.nombre">
-              </q-avatar>
-            </div>
           </q-card-section>
         </q-card>
 
-        <div class="section-title text-green-9 text-weight-bold">Información del centro</div>
+        <div class="section-header section-header-space">
+          <div class="section-badge">Centro</div>
+          <h2 class="section-title">Información del centro</h2>
+        </div>
 
-        <q-card flat bordered class="info-card">
+        <q-card flat class="info-card">
           <q-card-section>
             <div class="info-item">
-            <span class="label">Subdirectora del Centro:</span>
-            <span class="value">Patricia Rodríguez Martínez</span>
-          </div>
+              <span class="label">Subdirectora del Centro:</span>
+              <span class="value">Patricia Rodríguez Martínez</span>
+            </div>
 
-          <div class="info-item">
+            <div class="info-item">
+              <span class="label">Ubicación:</span>
               <span class="value">Centro Agroturístico (SENA San Gil / Socorro)</span>
             </div>
 
@@ -67,7 +74,7 @@ const desarrollador = {
   width: 100%;
   max-width: none;
   margin: 0;
-  min-height: calc(100vh - 70px);
+  min-height: calc(100vh - 88px);
   overflow: hidden;
   padding: 0;
 }
@@ -79,60 +86,89 @@ const desarrollador = {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  filter: brightness(1.1) saturate(0.9) contrast(0.95);
-  transform: scale(1.03);
+  filter: brightness(0.74) saturate(1.15) contrast(1.08);
+  transform: scale(1.05);
 }
 
 .content-wrapper {
   position: relative;
   z-index: 1;
-  width: 100%;
-  max-width: 1100px;
+  width: min(1100px, calc(100% - 24px));
   margin: 0 auto;
-  padding: 24px 20px 30px;
+  padding: 40px 0 46px;
 }
 
 .glass-panel {
-  background: rgba(255, 255, 255, 0.78);
-  border: 1px solid rgba(255, 255, 255, 0.7);
-  border-radius: 18px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-  backdrop-filter: blur(3px);
-  padding: 22px 18px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.72), rgba(238, 246, 241, 0.64));
+  border: 1px solid rgba(14, 53, 42, 0.08);
+  border-radius: 32px;
+  box-shadow: 0 28px 50px rgba(8, 17, 19, 0.12);
+  backdrop-filter: blur(10px);
+  padding: 28px 22px;
+}
+
+.section-header {
+  margin-bottom: 18px;
+}
+
+.section-header-space {
+  margin-top: 30px;
+}
+
+.section-badge {
+  display: inline-block;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: rgba(244, 176, 77, 0.18);
+  color: #955d15;
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
 
 .section-title {
-  font-size: 1.35rem;
-  margin-bottom: 12px;
-  font-weight: 700;
-  letter-spacing: 0.02em;
+  margin: 12px 0 0;
+  font-size: clamp(1.8rem, 2.4vw, 2.6rem);
+  font-weight: 900;
+  line-height: 1.1;
+  color: #183f34;
 }
 
 .developer-card,
 .info-card {
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.94);
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 26px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(236,246,240,0.9));
+  border: 1px solid rgba(14, 53, 42, 0.08);
+  box-shadow: 0 18px 34px rgba(6, 17, 20, 0.08);
 }
 
 .developer-card {
-  width: min(90%, 620px);
-  margin-left: auto;
-  margin-right: auto;
+  width: min(700px, 100%);
+  margin: 0 auto 8px;
 }
 
 .developer-content {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 22px;
+  flex-wrap: wrap;
   text-align: center;
-  width: 100%;
+  padding: 22px 18px;
+}
+
+.developer-avatar-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.developer-avatar {
+  border: 4px solid rgba(244, 176, 77, 0.52);
+  box-shadow: 0 18px 28px rgba(12, 22, 17, 0.22);
 }
 
 .developer-text {
-  text-align: center;
-  padding-right: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -140,38 +176,26 @@ const desarrollador = {
 }
 
 .developer-name {
-  color: #1f3f2a;
+  font-size: 1.38rem;
+  font-weight: 800;
+  color: #123f35;
 }
 
 .developer-phone {
-  color: #2e7d32;
-  font-weight: 600;
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
-}
-
-.developer-avatar-wrap {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
   margin-top: 8px;
-}
-
-.developer-avatar {
-  border: 3px solid #2e7d32;
-  box-shadow: 0 8px 16px rgba(46, 125, 50, 0.18);
-  margin: 0 auto;
+  color: #1d6f59;
+  font-weight: 700;
 }
 
 .info-item {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  padding: 12px 0;
-  border-bottom: 1px solid #e0e0e0;
+  gap: 5px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
 .info-item:last-child {
@@ -180,12 +204,12 @@ const desarrollador = {
 }
 
 .label {
-  font-weight: 700;
-  color: #2e7d32;
+  font-weight: 800;
+  color: #a7651a;
 }
 
 .value {
-  color: #333;
-  line-height: 1.6;
+  color: #1f3a34;
+  line-height: 1.7;
 }
 </style>
